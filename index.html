@@ -3,48 +3,28 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tony Chisenga — AI Engineer</title>
+<title>Tony Chisenga | Computer Scientist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #f9f8f5;
-    --surface: #ffffff;
-    --ink: #0f0e0c;
-    --ink2: #4a4945;
-    --ink3: #9a9792;
-    --accent2: #4361ee;
-    --border: rgba(0,0,0,0.08);
-    --tag-bg: #eeedf8;
-    --tag-ink: #3730a3;
-    --serif: 'DM Serif Display', serif;
-    --sans: 'DM Sans', sans-serif;
-    --mono: 'DM Mono', monospace;
+    --bg: #f9f8f5; --surface: #ffffff; --ink: #0f0e0c; --ink2: #4a4945; --ink3: #9a9792;
+    --accent2: #4361ee; --border: rgba(0,0,0,0.08); --tag-bg: #eeedf8; --tag-ink: #3730a3;
+    --serif: 'DM Serif Display', serif; --sans: 'DM Sans', sans-serif; --mono: 'DM Mono', monospace;
   }
   html { scroll-behavior: smooth; }
   body { font-family: var(--sans); background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.7; min-height: 100vh; }
 
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(249,248,245,0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2.5rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 56px;
-  }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(249,248,245,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
   .nav-logo { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink); letter-spacing: 0.04em; text-decoration: none; }
   .nav-logo span { color: var(--accent2); }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { font-size: 13px; color: var(--ink2); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
   .nav-links a:hover { color: var(--ink); }
 
-  /* SECTIONS */
   section { padding: 5rem 2.5rem; max-width: 860px; margin: 0 auto; }
 
-  /* HERO */
   #hero { padding-top: 7rem; padding-bottom: 6rem; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; max-width: 860px; margin: 0 auto; }
   .hero-eyebrow { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--accent2); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
   .hero-name { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
@@ -52,13 +32,12 @@
   .hero-bio { font-size: 16px; color: var(--ink2); max-width: 460px; line-height: 1.75; margin-bottom: 2rem; }
   .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: #fff; font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; padding: 10px 22px; border-radius: 4px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
   .hero-cta:hover { background: var(--accent2); transform: translateY(-1px); }
-  .hero-avatar { width: 130px; height: 130px; border-radius: 50%; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 2.2rem; color: var(--tag-ink); border: 2px solid var(--border); flex-shrink: 0; }
+  .hero-avatar { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid var(--border); flex-shrink: 0; display: block; }
+  .hero-avatar-fallback { width: 140px; height: 140px; border-radius: 50%; background: var(--tag-bg); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 2.2rem; color: var(--tag-ink); border: 3px solid var(--border); flex-shrink: 0; }
 
-  /* SECTION LABEL */
   .section-label { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink3); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 12px; }
   .section-label::after { content: ''; display: block; flex: 1; height: 1px; background: var(--border); }
 
-  /* ABOUT */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
   .about-text p { color: var(--ink2); margin-bottom: 1rem; font-size: 15px; }
   .about-facts { display: flex; flex-direction: column; gap: 1rem; }
@@ -67,58 +46,53 @@
   .fact-key { color: var(--ink3); font-family: var(--mono); }
   .fact-val { color: var(--ink); font-weight: 500; }
 
-  /* SKILLS */
   .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
   .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
   .skill-card-title { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.85rem; }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .skill-tag { font-size: 12px; background: var(--tag-bg); color: var(--tag-ink); padding: 3px 10px; border-radius: 3px; font-family: var(--mono); }
 
-  /* EXPERIENCE */
   .exp-list { display: flex; flex-direction: column; }
-  .exp-item { display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
+  .exp-item { display: grid; grid-template-columns: 140px 1fr; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
   .exp-item:first-child { padding-top: 0; }
   .exp-year { font-family: var(--mono); font-size: 12px; color: var(--ink3); padding-top: 3px; }
   .exp-role { font-weight: 500; font-size: 15px; color: var(--ink); margin-bottom: 2px; }
   .exp-company { font-size: 13px; color: var(--accent2); margin-bottom: 0.5rem; font-family: var(--mono); }
   .exp-desc { font-size: 14px; color: var(--ink2); line-height: 1.65; }
 
-  /* PROJECTS TABS */
   .project-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
-  .tab-btn {
-    font-family: var(--mono); font-size: 12px; font-weight: 500;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--ink3); background: none; border: none;
-    padding: 0.75rem 1.25rem; cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
-    transition: color 0.2s, border-color 0.2s;
-  }
+  .tab-btn { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink3); background: none; border: none; padding: 0.75rem 1.25rem; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.2s, border-color 0.2s; }
   .tab-btn:hover { color: var(--ink); }
   .tab-btn.active { color: var(--accent2); border-bottom-color: var(--accent2); }
   .tab-panel { display: none; }
   .tab-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 
-  /* PROJECT CARDS */
   .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.2s, transform 0.15s; text-decoration: none; color: inherit; }
   .project-card:hover { border-color: rgba(67,97,238,0.35); transform: translateY(-2px); }
   .project-header { display: flex; align-items: flex-start; justify-content: space-between; }
   .project-title { font-weight: 500; font-size: 15px; color: var(--ink); }
-  .project-arrow { font-size: 18px; color: var(--ink3); transition: color 0.2s; }
-  .project-card:hover .project-arrow { color: var(--accent2); }
-  .project-desc { font-size: 13px; color: var(--ink2); line-height: 1.6; }
+  .project-desc { font-size: 13px; color: var(--ink2); line-height: 1.6; flex: 1; }
+  .project-links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .project-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    padding: 5px 12px; border-radius: 20px; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .project-link.github {
+    background: var(--ink); color: #fff;
+  }
+  .project-link.github:hover { background: #333; }
+  .project-link.demo {
+    background: var(--accent2); color: #fff;
+  }
+  .project-link.demo:hover { background: #2e4ed4; }
   .project-stack { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
   .project-tag { font-family: var(--mono); font-size: 11px; background: #f0f0f8; color: #444; padding: 2px 8px; border-radius: 3px; }
 
-  /* BLOG */
-  .blog-list { display: flex; flex-direction: column; }
-  .blog-item { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; gap: 1rem; }
-  .blog-item:first-child { padding-top: 0; }
-  .blog-item:hover .blog-title { color: var(--accent2); }
-  .blog-title { font-size: 15px; color: var(--ink); transition: color 0.2s; }
-  .blog-meta { font-family: var(--mono); font-size: 11px; color: var(--ink3); white-space: nowrap; }
+  /* Blog hidden until Tony has real posts */
+  /* .blog-list { display: flex; flex-direction: column; } */
 
-  /* CONTACT */
   .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
   .contact-tagline { font-family: var(--serif); font-size: 2rem; line-height: 1.2; color: var(--ink); margin-bottom: 1rem; }
   .contact-tagline em { font-style: italic; color: var(--accent2); }
@@ -128,20 +102,18 @@
   .contact-link:hover { border-color: rgba(67,97,238,0.4); color: var(--accent2); }
   .contact-icon { font-size: 16px; color: var(--ink3); }
 
-  /* FOOTER */
   footer { text-align: center; padding: 2rem; font-family: var(--mono); font-size: 11px; color: var(--ink3); border-top: 1px solid var(--border); max-width: 860px; margin: 0 auto; }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#hero" class="nav-logo">chisenga<span>.</span>sol</a>
+  <a href="#hero" class="nav-logo">Tony <span>Chisenga</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#blog">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -149,12 +121,22 @@
 <!-- HERO -->
 <section id="hero" style="padding-left:2.5rem;padding-right:2.5rem;">
   <div>
-    <p class="hero-eyebrow">AI Engineer</p>
+    <p class="hero-eyebrow">AI Engineer and Computer Scientist</p>
     <h1 class="hero-name">Tony<br><em>Chisenga</em></h1>
-    <p class="hero-bio">Building intelligent systems that turn complex data into meaningful decisions. Passionate about LLMs, MLOps, and the intersection of research and production AI.</p>
+    <p class="hero-bio">I build intelligent systems spanning LLM pipelines, computer vision models, and full-stack web platforms with equal care for rigour, reliability, and real-world impact.</p>
     <a href="#contact" class="hero-cta">Get in touch →</a>
   </div>
-  <div class="hero-avatar">TC</div>
+  <!--
+    Place your photo file (tony_chisenga.jpg) in the same folder as index.html
+    in your GitHub repo. The image will appear automatically.
+  -->
+  <img
+    src="tony_chisenga.jpg"
+    alt="Tony Chisenga"
+    class="hero-avatar"
+    onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';"
+  />
+  <div id="avatar-fallback" class="hero-avatar-fallback" style="display:none;">TC</div>
 </section>
 
 <!-- ABOUT -->
@@ -162,15 +144,16 @@
   <p class="section-label">About me</p>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm an AI Engineer with a focus on designing and deploying large language model pipelines, retrieval-augmented generation systems, and scalable ML infrastructure.</p>
-      <p>I enjoy working at the boundary between research and engineering — taking ideas from paper to production with care for reliability, latency, and real-world impact.</p>
-      <p>When I'm not wrangling embeddings, you'll find me writing about AI trends or exploring open-source tooling.</p>
+      <p>I am a computer scientist and machine learning engineer with an M.S. in Engineering Artificial Intelligence from Carnegie Mellon University and a B.S. in Computer Science from Ashesi University.</p>
+      <p>My work spans machine learning, computer vision, NLP, full-stack web development, and data analysis. I have built and deployed end-to-end systems across both academic and professional settings, from RAG pipelines and AI-powered applications to production web platforms and computer vision models.</p>
+      <p>I bring both rigour and curiosity to everything I work on, and I enjoy communicating clearly across technical and non-technical audiences. I am open to remote and international opportunities.</p>
     </div>
     <div class="about-facts">
-      <div class="fact-row"><span class="fact-key">location</span><span class="fact-val">Kigali, Rwanda</span></div>
-      <div class="fact-row"><span class="fact-key">focus</span><span class="fact-val">LLMs & MLOps</span></div>
-      <div class="fact-row"><span class="fact-key">currently</span><span class="fact-val">Open to roles</span></div>
-      <div class="fact-row"><span class="fact-key">languages</span><span class="fact-val">Python, TypeScript</span></div>
+      <div class="fact-row"><span class="fact-key">location</span><span class="fact-val">Lusaka, Zambia</span></div>
+      <div class="fact-row"><span class="fact-key">M.S.</span><span class="fact-val">Engineering AI, CMU Africa</span></div>
+      <div class="fact-row"><span class="fact-key">B.S.</span><span class="fact-val">Computer Science, Ashesi University</span></div>
+      <div class="fact-row"><span class="fact-key">focus</span><span class="fact-val">ML, CV, NLP, Full Stack</span></div>
+      <div class="fact-row"><span class="fact-key">availability</span><span class="fact-val">Open to opportunities</span></div>
       <div class="fact-row"><span class="fact-key">github</span><span class="fact-val">github.com/ChisengaSol</span></div>
     </div>
   </div>
@@ -181,39 +164,39 @@
   <p class="section-label">Skills</p>
   <div class="skills-grid">
     <div class="skill-card">
-      <p class="skill-card-title">AI / ML</p>
-      <div class="skill-tags">
-        <span class="skill-tag">LLMs</span><span class="skill-tag">RAG</span><span class="skill-tag">Fine-tuning</span><span class="skill-tag">Embeddings</span><span class="skill-tag">Prompt Eng.</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <p class="skill-card-title">Frameworks</p>
-      <div class="skill-tags">
-        <span class="skill-tag">LangChain</span><span class="skill-tag">LlamaIndex</span><span class="skill-tag">HuggingFace</span><span class="skill-tag">PyTorch</span><span class="skill-tag">FastAPI</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <p class="skill-card-title">Infrastructure</p>
-      <div class="skill-tags">
-        <span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">AWS</span><span class="skill-tag">GCP</span><span class="skill-tag">MLflow</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <p class="skill-card-title">Data</p>
-      <div class="skill-tags">
-        <span class="skill-tag">PostgreSQL</span><span class="skill-tag">Pinecone</span><span class="skill-tag">Redis</span><span class="skill-tag">Spark</span>
-      </div>
-    </div>
-    <div class="skill-card">
       <p class="skill-card-title">Languages</p>
       <div class="skill-tags">
-        <span class="skill-tag">Python</span><span class="skill-tag">TypeScript</span><span class="skill-tag">SQL</span><span class="skill-tag">Bash</span>
+        <span class="skill-tag">Python</span><span class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Java</span><span class="skill-tag">SQL</span>
       </div>
     </div>
     <div class="skill-card">
-      <p class="skill-card-title">Practices</p>
+      <p class="skill-card-title">ML and Vision</p>
       <div class="skill-tags">
-        <span class="skill-tag">CI/CD</span><span class="skill-tag">Eval Pipelines</span><span class="skill-tag">A/B Testing</span><span class="skill-tag">Observability</span>
+        <span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">OpenCV</span><span class="skill-tag">Keras</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-card-title">Web and Backend</p>
+      <div class="skill-tags">
+        <span class="skill-tag">React</span><span class="skill-tag">Django</span><span class="skill-tag">Node.js</span><span class="skill-tag">Vue.js</span><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-card-title">Databases</p>
+      <div class="skill-tags">
+        <span class="skill-tag">PostgreSQL</span><span class="skill-tag">Supabase</span><span class="skill-tag">SQL</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-card-title">Tools</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">Docker</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <p class="skill-card-title">Certifications</p>
+      <div class="skill-tags">
+        <span class="skill-tag">ML Specialization, DeepLearning.AI</span><span class="skill-tag">Data Science, IBM</span><span class="skill-tag">Big Data, UC San Diego</span>
       </div>
     </div>
   </div>
@@ -224,27 +207,27 @@
   <p class="section-label">Experience</p>
   <div class="exp-list">
     <div class="exp-item">
-      <span class="exp-year">2023 — present</span>
+      <span class="exp-year">Jan 2026 to May 2026</span>
       <div>
-        <p class="exp-role">Senior AI Engineer</p>
-        <p class="exp-company">Company Name · Full-time</p>
-        <p class="exp-desc">Placeholder — describe what you built, the scale it operated at, and the impact it had. Focus on outcomes over tasks.</p>
+        <p class="exp-role">Research Assistant</p>
+        <p class="exp-company">Languages and Spatial Technologies Lab, Carnegie Mellon University Africa</p>
+        <p class="exp-desc">I conducted research on LLM reasoning under the Languages and Spatial Technologies Lab at CMU Africa, investigating strategies to improve reasoning capabilities across complex tasks. I designed and evaluated experimental frameworks to benchmark LLM performance, identified key failure modes, and collaborated with lab researchers to prototype techniques for enhancing multi-step and logical reasoning.</p>
       </div>
     </div>
     <div class="exp-item">
-      <span class="exp-year">2021 — 2023</span>
+      <span class="exp-year">2025</span>
       <div>
-        <p class="exp-role">ML Engineer</p>
-        <p class="exp-company">Company Name · Full-time</p>
-        <p class="exp-desc">Placeholder — led development of X pipeline, reduced latency by Y%, collaborated with cross-functional team to ship Z feature.</p>
+        <p class="exp-role">Graduate Teaching Assistant</p>
+        <p class="exp-company">Carnegie Mellon University Africa · Introduction to Machine Learning for Engineers (18-661)</p>
+        <p class="exp-desc">I facilitated weekly office hours to clarify ML concepts, provided guidance on assignments, assisted in developing and grading homework and exam questions, and proctored examinations.</p>
       </div>
     </div>
     <div class="exp-item">
-      <span class="exp-year">2019 — 2021</span>
+      <span class="exp-year">2022 to 2023</span>
       <div>
-        <p class="exp-role">Data Scientist</p>
-        <p class="exp-company">Company Name · Full-time</p>
-        <p class="exp-desc">Placeholder — your early career role. What did you learn? What systems did you first build?</p>
+        <p class="exp-role">Software Developer and Tech Support</p>
+        <p class="exp-company">Edulution Zambia Limited</p>
+        <p class="exp-desc">I designed and implemented new features for the company's Inventory Management System, offline testing software for learners, and the Kolibri Learning Tool, significantly enhancing the efficiency and functionality of the organisation's software tools.</p>
       </div>
     </div>
   </div>
@@ -253,108 +236,113 @@
 <!-- PROJECTS -->
 <section id="projects" style="padding-left:2.5rem;padding-right:2.5rem;">
   <p class="section-label">Projects</p>
-
   <div class="project-tabs">
-    <button class="tab-btn active" onclick="switchTab('software')">Software Development</button>
-    <button class="tab-btn" onclick="switchTab('data')">Data Analysis</button>
-    <button class="tab-btn" onclick="switchTab('ml')">Machine Learning</button>
+    <button class="tab-btn active" onclick="switchTab('software', this)">Software Development</button>
+    <button class="tab-btn" onclick="switchTab('data', this)">Data Analysis</button>
+    <button class="tab-btn" onclick="switchTab('ml', this)">Machine Learning</button>
   </div>
 
-  <!-- Software Development -->
+  <!-- Software Development tab -->
   <div id="tab-software" class="tab-panel active">
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">REST API Service</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — describe the API, what it powers, and how it was built. Mention stack and scale.</p>
-      <div class="project-stack"><span class="project-tag">FastAPI</span><span class="project-tag">PostgreSQL</span><span class="project-tag">Docker</span></div>
-    </a>
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">CLI Dev Tool</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — a command-line tool that automates a repetitive developer workflow. Add GitHub stars when live.</p>
-      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">Typer</span><span class="project-tag">Rich</span></div>
-    </a>
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">Web Dashboard</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — a full-stack dashboard for monitoring X. Describe the frontend, backend, and key features.</p>
-      <div class="project-stack"><span class="project-tag">TypeScript</span><span class="project-tag">React</span><span class="project-tag">Node.js</span></div>
-    </a>
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">Open Source Library</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — a reusable library or SDK you published. What problem does it solve for other developers?</p>
-      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">PyPI</span></div>
-    </a>
+    <div class="project-card">
+      <div class="project-header"><span class="project-title">Atelier E-Commerce Platform</span></div>
+      <p class="project-desc">A full-stack e-commerce web application with a customer storefront for browsing and purchasing clothing, and a secure admin dashboard for managing orders, inventory, analytics, discounts, and role-based access control.</p>
+      <div class="project-links">
+        <a href="https://github.com/ChisengaSol/atelier-project" target="_blank" class="project-link github" onclick="event.stopPropagation()">⌥ GitHub</a>
+        <a href="https://www.youtube.com/watch?v=d1BQwCND6-o" target="_blank" class="project-link demo" onclick="event.stopPropagation()">▶ Watch Demo</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">React</span><span class="project-tag">FastAPI</span><span class="project-tag">PostgreSQL</span><span class="project-tag">Python</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-header"><span class="project-title">SkillTrack Learning Tracker</span></div>
+      <p class="project-desc">A full-stack personal skill learning tracker where users can log learning sessions, set goals, earn badges, and build consistent learning habits backed by Supabase with full authentication and row-level security.</p>
+      <div class="project-links">
+        <a href="https://github.com/ChisengaSol/skills_tracker" target="_blank" class="project-link github" onclick="event.stopPropagation()">⌥ GitHub</a>
+        <a href="https://www.youtube.com/watch?v=J_y6x8ADjrY" target="_blank" class="project-link demo" onclick="event.stopPropagation()">▶ Watch Demo</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">React</span><span class="project-tag">TypeScript</span><span class="project-tag">Supabase</span><span class="project-tag">Vite</span></div>
+    </div>
+    <!--
+    ADD MORE SOFTWARE PROJECTS HERE when ready. Copy the block below and fill in:
+    <div class="project-card">
+      <div class="project-header"><span class="project-title">Your Project Title</span></div>
+      <p class="project-desc">Your description here.</p>
+      <div class="project-links">
+        <a href="GITHUB_URL" target="_blank" class="project-link github">⌥ GitHub</a>
+        <a href="DEMO_URL" target="_blank" class="project-link demo">▶ Watch Demo</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">Tech</span></div>
+    </div>
+    -->
   </div>
 
-  <!-- Data Analysis -->
+  <!-- Data Analysis tab -->
   <div id="tab-data" class="tab-panel">
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">Sales Trends Analysis</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — an end-to-end analysis project. Describe the dataset, the insights uncovered, and how they drove decisions.</p>
-      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">Pandas</span><span class="project-tag">Seaborn</span></div>
-    </a>
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">Interactive BI Dashboard</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — a dashboard built for a business stakeholder. What KPIs does it track? What decisions did it inform?</p>
-      <div class="project-stack"><span class="project-tag">Power BI</span><span class="project-tag">SQL</span><span class="project-tag">DAX</span></div>
-    </a>
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">ETL Pipeline</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — a data pipeline that moves, cleans, and transforms data from X to Y. Mention volume and frequency.</p>
-      <div class="project-stack"><span class="project-tag">Apache Spark</span><span class="project-tag">Airflow</span><span class="project-tag">GCP</span></div>
-    </a>
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">Customer Segmentation</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — used clustering to segment customers and inform marketing strategy. Describe the methodology and outcome.</p>
-      <div class="project-stack"><span class="project-tag">Scikit-learn</span><span class="project-tag">K-Means</span><span class="project-tag">Plotly</span></div>
-    </a>
+    <div class="project-card">
+      <div class="project-header"><span class="project-title">Climate Vulnerability Analysis in Tana River County</span></div>
+      <p class="project-desc">I analysed flood risk by integrating geospatial datasets to identify key drivers of flooding in Tana River County. Using machine learning methods on remote sensing imagery and soil databases, I identified low elevation and poor drainage as the most significant predictors of high flood risk.</p>
+      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">Remote Sensing</span><span class="project-tag">Soil Databases</span><span class="project-tag">Machine Learning</span></div>
+    </div>
+    <!--
+    ADD MORE DATA ANALYSIS PROJECTS HERE when ready. Copy the block below and fill in:
+    <div class="project-card">
+      <div class="project-header"><span class="project-title">Your Project Title</span></div>
+      <p class="project-desc">Your description here.</p>
+      <div class="project-links">
+        <a href="GITHUB_URL" target="_blank" class="project-link github">⌥ GitHub</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">Tech</span></div>
+    </div>
+    -->
   </div>
 
-  <!-- Machine Learning -->
+  <!-- Machine Learning tab -->
   <div id="tab-ml" class="tab-panel">
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">LLM RAG System</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — a retrieval-augmented generation system built on top of an LLM. Describe the knowledge base and use case.</p>
-      <div class="project-stack"><span class="project-tag">LangChain</span><span class="project-tag">Pinecone</span><span class="project-tag">OpenAI</span></div>
-    </a>
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">Fine-tuned Classifier</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — fine-tuned a pre-trained model on a custom dataset. What was the task, the accuracy, and the deployment?</p>
-      <div class="project-stack"><span class="project-tag">HuggingFace</span><span class="project-tag">PyTorch</span><span class="project-tag">AWS</span></div>
-    </a>
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">Recommendation Engine</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — a collaborative or content-based filtering system. Describe the data, the model, and the business impact.</p>
-      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">Surprise</span><span class="project-tag">FastAPI</span></div>
-    </a>
-    <a href="#" class="project-card">
-      <div class="project-header"><span class="project-title">MLOps Pipeline</span><span class="project-arrow">↗</span></div>
-      <p class="project-desc">Placeholder — an end-to-end ML pipeline with training, evaluation, and deployment automation. Mention the tools used.</p>
-      <div class="project-stack"><span class="project-tag">MLflow</span><span class="project-tag">Kubernetes</span><span class="project-tag">CI/CD</span></div>
-    </a>
+    <div class="project-card">
+      <div class="project-header"><span class="project-title">Vehicle Damage Severity Classifier</span></div>
+      <p class="project-desc">A computer vision model that analyses images of damaged vehicles and classifies the damage into three severity levels (minor, moderate, or severe). Served via a REST API and containerised with Docker for easy deployment.</p>
+      <div class="project-links">
+        <a href="https://github.com/ChisengaSol/car-damage-classifier" target="_blank" class="project-link github" onclick="event.stopPropagation()">⌥ GitHub</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">Keras</span><span class="project-tag">FastAPI</span><span class="project-tag">Docker</span><span class="project-tag">Computer Vision</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-header"><span class="project-title">Multi-Object Tracking in Video</span></div>
+      <p class="project-desc">A multi-object tracking system that detects objects in a video stream using YOLOv5 and maintains their identities across frames using the DeepSORT algorithm.</p>
+      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">YOLOv5</span><span class="project-tag">DeepSORT</span><span class="project-tag">OpenCV</span></div>
+    </div>
+    <div class="project-card">
+      <div class="project-header"><span class="project-title">Semantic Segmentation of Aerial Imagery</span></div>
+      <p class="project-desc">A deep learning model built with U-Net and EfficientNetB4 to perform pixel-wise classification on aerial imagery, accurately identifying land cover types such as buildings, vegetation, and water.</p>
+      <div class="project-stack"><span class="project-tag">Python</span><span class="project-tag">TensorFlow</span><span class="project-tag">Keras</span><span class="project-tag">U-Net</span><span class="project-tag">EfficientNetB4</span></div>
+    </div>
+    <!--
+    ADD MORE ML PROJECTS HERE when ready. Copy the block below and fill in:
+    <div class="project-card">
+      <div class="project-header"><span class="project-title">Your Project Title</span></div>
+      <p class="project-desc">Your description here.</p>
+      <div class="project-links">
+        <a href="GITHUB_URL" target="_blank" class="project-link github">⌥ GitHub</a>
+      </div>
+      <div class="project-stack"><span class="project-tag">Tech</span></div>
+    </div>
+    -->
   </div>
 </section>
 
-<!-- BLOG -->
+<!--
+BLOG SECTION — uncomment this entire block when you have real posts to share.
+
 <section id="blog" style="padding-left:2.5rem;padding-right:2.5rem;">
   <p class="section-label">Writing</p>
   <div class="blog-list">
-    <a href="#" class="blog-item">
-      <span class="blog-title">Why RAG is still the right default for enterprise LLM apps</span>
-      <span class="blog-meta">Jun 2025</span>
-    </a>
-    <a href="#" class="blog-item">
-      <span class="blog-title">A practical guide to evaluating LLM pipelines in production</span>
-      <span class="blog-meta">Apr 2025</span>
-    </a>
-    <a href="#" class="blog-item">
-      <span class="blog-title">Fine-tuning vs. prompting: when to use which approach</span>
-      <span class="blog-meta">Feb 2025</span>
-    </a>
-    <a href="#" class="blog-item">
-      <span class="blog-title">Vector databases compared: Pinecone, Weaviate, Qdrant</span>
-      <span class="blog-meta">Dec 2024</span>
+    <a href="YOUR_POST_URL" class="blog-item">
+      <span class="blog-title">Your Post Title Here</span>
+      <span class="blog-meta">Month Year</span>
     </a>
   </div>
 </section>
+-->
 
 <!-- CONTACT -->
 <section id="contact" style="padding-left:2.5rem;padding-right:2.5rem;">
@@ -362,27 +350,28 @@
   <div class="contact-inner">
     <div>
       <h2 class="contact-tagline">Let's build something <em>smart</em> together.</h2>
-      <p class="contact-sub">Open to freelance projects, full-time roles, and interesting conversations about AI.</p>
+      <p class="contact-sub">I am open to remote roles, freelance projects, research collaborations, and interesting conversations about AI and software.</p>
     </div>
     <div class="contact-links">
-      <a href="mailto:tony@example.com" class="contact-link"><span class="contact-icon">✉</span> tony@example.com</a>
-      <a href="https://linkedin.com/in/tonychisenga" class="contact-link"><span class="contact-icon">in</span> linkedin.com/in/tonychisenga</a>
-      <a href="https://github.com/ChisengaSol" class="contact-link"><span class="contact-icon">⌥</span> github.com/ChisengaSol</a>
-      <a href="https://twitter.com/tonychisenga" class="contact-link"><span class="contact-icon">𝕏</span> twitter.com/tonychisenga</a>
+      <a href="mailto:tchisenga16@hotmail.com" class="contact-link"><span class="contact-icon">✉</span> tchisenga16@hotmail.com</a>
+      <a href="https://www.linkedin.com/in/tony-chisenga-68418b126/" target="_blank" class="contact-link"><span class="contact-icon">in</span> linkedin.com/in/tony-chisenga</a>
+      <a href="https://github.com/ChisengaSol" target="_blank" class="contact-link"><span class="contact-icon">⌥</span> github.com/ChisengaSol</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Tony Chisenga · Built with care · Hosted on GitHub Pages</p>
+  <p>&copy; <span id="footer-year"></span> Tony Chisenga &middot; Lusaka, Zambia &middot; Hosted on GitHub Pages</p>
 </footer>
 
 <script>
-  function switchTab(name) {
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  function switchTab(name, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.getElementById('tab-' + name).classList.add('active');
-    event.target.classList.add('active');
+    btn.classList.add('active');
   }
 </script>
 </body>
